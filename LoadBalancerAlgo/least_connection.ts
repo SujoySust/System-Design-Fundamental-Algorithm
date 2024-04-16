@@ -1,3 +1,25 @@
+/**
+ * Least Connections Algorithm
+ * 
+ * The Least Connections algorithm directs incoming requests to the server with 
+ * the lowest number of active connections. This approach accounts for the varying 
+ * workloads of servers.
+ * 
+ * Pros:
+ * - Adapts to differing server capacities and workloads.
+ * - Balances load more effectively when dealing with requests that take a variable amount of time to process.
+ * 
+ * Cons:
+ * - Requires tracking the number of active connections for each server, 
+ *   which can increase complexity.
+ * - May not factor in server response time or health.
+ * 
+ * Example: An email service receives requests from users. The load balancer directs 
+ *  new requests to the server with the fewest active connections, 
+ *  ensuring that servers with heavier workloads are not overwhelmed.
+ * 
+ */
+
 class LeastConnectionLoadBalancer {
     private servers: {name: string, connections: number}[]
     constructor(servers: string[]) {
